@@ -14,19 +14,19 @@
 
         body {
             font-family: 'ChulaCharasNew', 'Sarabun', 'Segoe UI', sans-serif;
-            background-color: #f8fafc; /* สีพื้นหลังสว่าง สบายตา */
-            color: #1e293b; /* สีตัวอักษรเทาเข้ม อ่านง่าย */
+            background-color: #fff5f7; /* สีพื้นหลังชมพูพาสเทลอ่อนมากๆ สบายตา */
+            color: #4a353a; /* สีตัวอักษรน้ำตาลเข้มปนชมพู อ่านง่ายไม่ตัดกันเกินไป */
             line-height: 1.6;
         }
 
         /* แถบเมนู (Navigation Bar) */
         header {
-            background-color: #1e3a8a; /* สีน้ำเงินเข้ม (Primary) */
+            background-color: #db2777; /* สีชมพูเข้มสดใส (Primary) */
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(219, 39, 119, 0.15);
         }
         nav ul {
             list-style: none;
@@ -35,7 +35,7 @@
             gap: 20px;
         }
         nav ul li a {
-            color: #93c5fd; /* สีฟ้าอ่อนตอนปกติ */
+            color: #fbcfe8; /* สีชมพูอ่อนตอนปกติ */
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
@@ -46,16 +46,16 @@
         /* เมนูเมื่อเมาส์ชี้ และหน้าปัจจุบัน */
         nav ul li a:hover, nav ul li a.active {
             color: #ffffff;
-            background-color: #3b82f6; /* สีฟ้าสดใส (Accent) */
+            background-color: #f472b6; /* สีชมพูกลางสว่าง (Accent) */
         }
 
         /* ส่วนแนะนำตัวด้านบน (Hero Section) */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #db2777 0%, #f472b6 100%);
             color: white;
             text-align: center;
             padding: 80px 20px;
-            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05);
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.03);
         }
         .hero-avatar {
             width: 140px;
@@ -64,7 +64,7 @@
             border: 4px solid rgba(255, 255, 255, 0.8);
             object-fit: cover;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(219, 39, 119, 0.2);
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -74,7 +74,7 @@
         }
         .hero p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             font-weight: 300;
         }
 
@@ -88,46 +88,46 @@
             background: white;
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(30, 41, 59, 0.05);
+            box-shadow: 0 10px 30px rgba(219, 39, 119, 0.04);
             text-align: center;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #fce7f3;
         }
         .card h2 {
-            color: #1e3a8a;
+            color: #be185d; /* สีชมพูเข้มแบบเบอร์รี่ */
             margin-bottom: 20px;
             font-size: 1.8rem;
         }
         .card p {
-            color: #475569;
+            color: #654e53;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
         
-        /* ปุ่มกดดีไซน์โมเดิร์น */
+        /* ปุ่มกดดีไซน์โมเดิร์นสีชมพู */
         .btn {
             display: inline-block;
-            background-color: #3b82f6;
+            background-color: #f472b6;
             color: white;
             padding: 14px 32px;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
             margin-top: 25px;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 4px 14px rgba(244, 114, 182, 0.4);
             transition: all 0.3s ease;
         }
         .btn:hover {
-            background-color: #2563eb;
+            background-color: #db2777;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 6px 20px rgba(219, 39, 119, 0.4);
         }
 
         /* ส่วนท้ายเว็บ (Footer) */
         footer {
             text-align: center;
             padding: 25px;
-            background-color: #0f172a; /* สีเทาเข้มเกือบดำ ดูพรีเมียม */
-            color: #94a3b8;
+            background-color: #4c0519; /* สีชมพูเข้มมากเกือบดำ ดูหรูหรา */
+            color: #fbcfe8;
             font-size: 14px;
             margin-top: 100px;
         }
@@ -150,10 +150,10 @@
 
     <!-- ส่วนต้อนรับและแสดงโปรไฟล์ -->
     <section class="hero">
-        <!-- ⚠️ อย่าลืมอัปโหลดไฟล์รูปตั้งชื่อว่า profile.jpg ไว้ใน GitHub โฟลเดอร์เดียวกับไฟล์นี้คราบ -->
+        <!-- ⚠️ อย่าลืมอัปโหลดไฟล์รูปตั้งชื่อว่า profile.jpg ไว้ใน GitHub คราบ -->
         <img src="profile.jpg" alt="รูปถ่ายของฉัน" class="hero-avatar">
         <h1>WELCOME TO MY PORTFOLIO</h1>
-        <p>นางสาว ปทุมวดี แก้วมุกดา  | นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+        <p>นางสาว ปทุมวดี แก้วมุกดา | นักเรียนชั้นมัธยมศึกษาปีที่ 6 โรงเรียนพานทอง</p>
     </section>
 
     <!-- กล่องข้อความต้อนรับกรรมการ -->
@@ -168,7 +168,7 @@
 
     <!-- ส่วนท้ายแสดงลิขสิทธิ์ -->
     <footer>
-        <p>&copy; 2026 น.ส.ปทุมวดี แก้วมุกดา. All Rights Reserved. | พัฒนาด้วย GitHub Pages</p>
+        <p>&copy; 2026 [ชื่อของคุณ]. All Rights Reserved. | พัฒนาด้วย GitHub Pages</p>
     </footer>
 
 </body>
