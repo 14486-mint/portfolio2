@@ -3,98 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me</title>
+<title>เกี่ยวกับฉัน | Portfolio</title>
 
 <style>
-
-body{
+*{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#FFE4EC;
+    padding:0;
+    box-sizing:border-box;
 }
 
-nav{
-    background:#FFF0F5;
-    padding:18px;
-    text-align:center;
+body{
+    font-family:Arial,sans-serif;
+    background:#fff5f7;
+    color:#4a353a;
+}
+
+header{
+    background:#db2777;
+    padding:15px 0;
+    position:sticky;
+    top:0;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    gap:20px;
 }
 
 nav a{
-    margin:20px;
+    color:#fbcfe8;
     text-decoration:none;
-    color:#C2185B;
     font-weight:bold;
+    padding:8px 16px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    background:#f472b6;
+    color:white;
 }
 
 .container{
-    max-width:900px;
-    margin:60px auto;
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,.1);
+    max-width:1000px;
+    margin:50px auto;
+    padding:20px;
 }
 
-h1{
-    color:#C2185B;
+.title{
     text-align:center;
+    margin-bottom:40px;
 }
 
-h2{
-    color:#C2185B;
+.title h1{
+    color:#be185d;
+    font-size:40px;
 }
 
-p{
-    color:#444;
-    line-height:1.8;
+.about{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+    justify-content:center;
 }
 
+.about img{
+    width:300px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.info{
+    flex:1;
+    min-width:300px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(219,39,119,.1);
+}
+
+.info h2{
+    color:#db2777;
+    margin-bottom:20px;
+}
+
+.info p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.skill{
+    margin-top:40px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(219,39,119,.1);
+}
+
+.skill h2{
+    color:#db2777;
+    margin-bottom:20px;
+}
+
+.skill ul{
+    padding-left:20px;
+}
+
+.skill li{
+    margin:10px 0;
+    font-size:17px;
+}
+
+footer{
+    background:#4c0519;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:60px;
+}
 </style>
 
 </head>
 <body>
 
+<header>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About Me</a>
-<a href="activities.html">Activities</a>
-<a href="achievements.html">Achievements</a>
-<a href="contact.html">Contact</a>
+<ul>
+<li><a href="index.html">หน้าแรก</a></li>
+<li><a href="about.html" class="active">เกี่ยวกับฉัน</a></li>
+<li><a href="projects.html">ผลงาน</a></li>
+<li><a href="certificates.html">เกียรติบัตร</a></li>
+<li><a href="contact.html">ติดต่อฉัน</a></li>
+</ul>
 </nav>
+</header>
 
 <div class="container">
 
-<h1>About Me</h1>
+<div class="title">
+<h1>เกี่ยวกับฉัน</h1>
+<p>ข้อมูลส่วนตัว</p>
+</div>
 
-<h2>ข้อมูลส่วนตัว</h2>
+<div class="about">
 
-<p>
-ชื่อ : นางสาว ปทุวดี แก้วมุกดา<br>
-ชื่อเล่น : มิ้น<br>
-อายุ : 18 ปี<br>
-วันเกิด : 10 เมษายน 2551<br>
-โรงเรียน : พานทอง<br>
-</p>
+<img src="profile.jpg" alt="รูปภาพ">
 
-<h2>เป้าหมาย</h2>
+<div class="info">
 
-<p>
-ฉันมีความมุ่งมั่นที่จะศึกษาต่อในคณะพยาบาลศาสตร์
-เพื่อพัฒนาความรู้และทักษะในการดูแลผู้ป่วย
-พร้อมทั้งเป็นบุคลากรทางการแพทย์ที่มีคุณภาพในอนาคต
-</p>
+<h2>ประวัติส่วนตัว</h2>
 
-<h2>ทักษะ (Skills)</h2>
+<p><strong>ชื่อ :</strong> นางสาว ปทุมวดี แก้วมุกดา</p>
 
-<p>
-• HTML<br>
-• CSS<br>
-• Canva<br>
-• Microsoft Office<br>
-• การทำงานเป็นทีม
-</p>
+<p><strong>ชื่อเล่น :</strong> (ใส่ชื่อเล่น)</p>
+
+<p><strong>วันเกิด :</strong> (ใส่วันเกิด)</p>
+
+<p><strong>อายุ :</strong> (ใส่อายุ)</p>
+
+<p><strong>โรงเรียน :</strong> โรงเรียนพานทอง</p>
+
+<p><strong>ระดับชั้น :</strong> มัธยมศึกษาปีที่ 6</p>
+
+<p><strong>คณะที่ใฝ่ฝัน :</strong> คณะพยาบาลศาสตร์ มหาวิทยาลัยบูรพา</p>
+
+<p><strong>อีเมล :</strong> example@gmail.com</p>
+
+<p><strong>โทรศัพท์ :</strong> 08X-XXX-XXXX</p>
 
 </div>
+
+</div>
+
+<div class="skill">
+
+<h2>ความสามารถและความสนใจ</h2>
+
+<ul>
+<li>มีมนุษยสัมพันธ์ที่ดี และสามารถทำงานร่วมกับผู้อื่นได้</li>
+<li>มีความรับผิดชอบ ตรงต่อเวลา และมีระเบียบวินัย</li>
+<li>ชอบช่วยเหลือผู้อื่น มีจิตอาสา</li>
+<li>สนใจด้านการดูแลสุขภาพและวิชาชีพพยาบาล</li>
+<li>สามารถใช้ Microsoft Word, PowerPoint และ Canva ได้</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+<p>&copy; 2026 นางสาว ปทุมวดี แก้วมุกดา | Portfolio</p>
+</footer>
 
 </body>
 </html>
