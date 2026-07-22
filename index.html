@@ -20,14 +20,14 @@ body{
     overflow-x: hidden;
 }
 
-/* --- ส่วนเอฟเฟกต์ดาวขยับและเคลื่อนที่ --- */
+/* --- เอฟเฟกต์ดาว 5 แฉก ประกาย และดอกไม้ขยับได้ --- */
 #star-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /* เพื่อให้คลิกทะลุดาวไปโดนปุ่มได้ */
+    pointer-events: none;
     z-index: 0;
 }
 
@@ -35,21 +35,30 @@ body{
     position: absolute;
     animation: floatAndTwinkle linear infinite;
     opacity: 0;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)); /* เพิ่มออร่าเรืองแสงอ่อนๆ */
 }
 
 @keyframes floatAndTwinkle {
     0% {
-        transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.5);
+        transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.4);
         opacity: 0;
     }
-    10% {
-        opacity: 0.8;
+    15% {
+        opacity: 0.9;
+    }
+    50% {
+        /* เพิ่มจังหวะกะพริบวิบวับตรงกลางทาง */
+        opacity: 0.4;
+        transform: translateY(50vh) translateX(30px) rotate(180deg) scale(1);
+    }
+    55% {
+        opacity: 0.9;
     }
     90% {
-        opacity: 0.8;
+        opacity: 0.9;
     }
     100% {
-        transform: translateY(-10vh) translateX(50px) rotate(360deg) scale(1.2);
+        transform: translateY(-10vh) translateX(70px) rotate(360deg) scale(1.4);
         opacity: 0;
     }
 }
@@ -88,22 +97,41 @@ nav a:hover{
     height:100vh;
     padding:20px;
     position: relative;
-    z-index: 1; /* ดันเนื้อหาให้อยู่เหนือดวงดาว */
+    z-index: 1;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 236px;
+    height: 236px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff85b3, #ffb6c1, #ba55d3, #ff69b4);
+    border-radius: 50%;
+    padding: 8px; 
+    box-shadow: 0 12px 35px rgba(255, 105, 180, 0.4);
+    animation: borderGlow 4s ease infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% { box-shadow: 0 12px 35px rgba(255, 105, 180, 0.4); }
+    100% { box-shadow: 0 12px 45px rgba(186, 85, 211, 0.6); }
 }
 
 .hero img{
-    width:220px;
-    height:220px;
+    width: 100%;
+    height: 100%;
     border-radius:50%;
     object-fit:cover;
-    border:7px solid white;
-    box-shadow:0 10px 30px rgba(255,105,180,.3);
+    border:5px solid white; 
 }
 
 .hero h1{
     margin-top:25px;
     font-size:50px;
     color:#d63384;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 .hero h3{
@@ -117,6 +145,10 @@ nav a:hover{
     color:#555;
     line-height:1.8;
     font-size:18px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .btn{
@@ -140,7 +172,7 @@ nav a:hover{
 </head>
 <body>
 
-<!-- กล่องสำหรับรองรับดวงดาวที่สร้างจาก JavaScript -->
+<!-- กล่องดวงดาวและดอกไม้ -->
 <div id="star-container"></div>
 
 <nav>
@@ -153,7 +185,9 @@ nav a:hover{
 
 <section class="hero">
 
-    <img src="images/IMG_2433.jpeg">
+    <div class="avatar-wrapper">
+        <img src="images/IMG_2433.jpeg">
+    </div>
 
     <h1>ชื่อ-นามสกุล</h1>
 
@@ -169,44 +203,40 @@ nav a:hover{
 
 </section>
 
-<!-- สคริปต์สั่งให้ดาวเกิดใหม่ สุ่มสี และวิ่งขึ้นด้านบนตลอดเวลา -->
 <script>
 function createStar() {
     const container = document.getElementById('star-container');
+    
+    // ควบคุมปริมาณไอเทมบนจอไม่ให้เกิน 90 ชิ้น
+    if (container.children.length > 90) return;
+
     const star = document.createElement('div');
     
-    // รายชื่อรูปทรงดวงดาวน่ารัก ๆ
-    const starTypes = ['✦', '★', '✨', '🌸'];
+    // เลือกเฉพาะ ดาว 5 แฉก, ประกายวิบวับ และดอกไม้ ตามที่ขอมาครับ
+    const starTypes = ['⭐', '✨', '🌸'];
     star.innerText = starTypes[Math.floor(Math.random() * starTypes.length)];
     
-    // รายชื่อโทนสีพาสเทลหลากสี ให้เข้ากับธีม
-    const colors = ['#ff69b4', '#ffb6c1', '#ba55d3', '#20b2aa', '#ffa500', '#9370db', '#ff85b3', '#ffc0cb'];
+    // ชุดสีพาสเทลหวานๆ ละมุนตา
+    const colors = ['#ffb6c1', '#ffc0cb', '#ff85b3', '#ff69b4', '#ea9999', '#e0b0ff', '#b39ddb', '#ce93d8', '#fff0f5'];
     
     star.classList.add('moving-star');
-    
-    // สุ่มตำแหน่งเริ่มต้นแนวนอน (0% ถึง 100% ของความกว้างจอ)
     star.style.left = Math.random() * 100 + 'vw';
-    
-    // สุ่มขนาดของดวงดาว
-    star.style.fontSize = (Math.random() * 15 + 15) + 'px';
-    
-    // สุ่มสีจากกล่องสีพาสเทล
+    star.style.fontSize = (Math.random() * 16 + 14) + 'px'; // ขนาดกำลังน่ารัก
     star.style.color = colors[Math.floor(Math.random() * colors.length)];
     
-    // สุ่มความเร็วในการวิ่ง (8 ถึง 15 วินาที)
-    const duration = Math.random() * 7 + 8;
+    // ตั้งค่าความเร็วในการลอยสลับกัน (6 ถึง 11 วินาที)
+    const duration = Math.random() * 5 + 6;
     star.style.animationDuration = duration + 's';
     
     container.appendChild(star);
     
-    // ลบดวงดาวทิ้งเมื่อวิ่งทะลุหน้าจอไปแล้ว เพื่อไม่ให้เว็บอืด
     setTimeout(() => {
         star.remove();
     }, duration * 1000);
 }
 
-// สั่งให้ดาวเกิดใหม่ทุกๆ 400 มิลลิวินาที (ปรับตัวเลขน้อยลงถ้าอยากให้ดาวเยอะขึ้นอีก)
-setInterval(createStar, 400);
+// ปล่อยดวงดาวและดอกไม้ออกมาอย่างต่อเนื่องทุกๆ 100 มิลลิวินาที หนาแน่นสะใจแน่นอนครับ
+setInterval(createStar, 100);
 </script>
 
 </body>
