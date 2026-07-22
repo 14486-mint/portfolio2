@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | Activities</title>
+<title>Portfolio | Contact</title>
 
 <style>
 *{
@@ -94,63 +94,60 @@ nav a.active {
     border-bottom: 2px solid #ff5fa2;
 }
 
-h1{
+.container{
+    max-width:700px;
+    margin:40px auto;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding:40px;
+    border-radius:30px;
+    box-shadow:0 10px 30px rgba(255, 105, 180, 0.1);
     text-align:center;
-    color:#d63384;
-    margin:40px 0;
     position: relative;
     z-index: 1;
+}
+
+h1{
+    color:#d63384;
+    margin-bottom:15px;
     font-size: 36px;
     text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
-.container{
-    width:90%;
-    max-width: 1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    padding-bottom:50px;
-    position: relative;
-    z-index: 1; /* ให้เนื้อหาอยู่เหนือดวงดาว */
-}
-
-/* ปรับแต่งการ์ดกิจกรรมให้สวยละมุนสไตล์กระจกเงาพาสเทล */
-.card{
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(255, 105, 180, 0.1);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow: 0 12px 30px rgba(255, 105, 180, 0.2);
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-bottom: 3px solid #ffcfdf; /* เส้นตัดหวาน ๆ ใต้รูปภาพ */
-}
-
-.card h2{
-    color:#d63384;
-    padding:20px 20px 10px;
-    font-size: 22px;
-}
-
-.card p{
+p{
     color:#555;
-    padding:0 20px 25px;
-    line-height:1.6;
-    font-size: 15px;
+    margin-bottom:30px;
+    line-height:1.8;
+    font-size: 16px;
+}
+
+.contact-item{
+    background: rgba(255, 255, 255, 0.5);
+    margin:15px 0;
+    padding:18px;
+    border-radius:20px;
+    font-size:18px;
+    color:#444;
+    border: 1px solid #ffcfdf;
+    text-align: left; /* เปลี่ยนเป็นชิดซ้ายเพื่อความเรียบร้อยของข้อมูล */
+    padding-left: 30px;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    background: white;
+    border-color: #ff85b3;
+}
+
+.footer{
+    text-align:center;
+    color:#8a4d66;
+    margin:40px 0;
+    font-size:15px;
+    position: relative;
+    z-index: 1;
 }
 </style>
 
@@ -164,72 +161,51 @@ h1{
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
-    <a href="activities.html" class="active">Activities</a>
+    <a href="activities.html">Activities</a>
     <a href="achievements.html">Achievements</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
 </nav>
-
-<h1>My Activities</h1>
 
 <div class="container">
 
-<div class="card">
-<img src="images/activity1.jpg" alt="Activity 1">
-<h2>กิจกรรมที่ 1</h2>
+<h1>Contact Me</h1>
+
 <p>
-รายละเอียดการเข้าร่วมกิจกรรมค่าย/อบรม หรือการทำประโยชน์ส่วนรวมเพื่อพัฒนาทักษะตนเอง
+ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ Portfolio ของฉัน<br>
+หากต้องการติดต่อ สามารถติดต่อได้ตามช่องทางด้านล่างนี้ได้เลยค่ะ
 </p>
+
+<div class="contact-item">
+📧 <strong>Email :</strong> yourname@email.com
 </div>
 
-<div class="card">
-<img src="images/activity2.jpg" alt="Activity 2">
-<h2>กิจกรรมที่ 2</h2>
-<p>
-รายละเอียดการเข้าร่วมกิจกรรมภายในโรงเรียนหรือนอกสถานที่ที่แสดงความเป็นผู้นำและการทำงานเป็นทีม
-</p>
+<div class="contact-item">
+📱 <strong>Phone :</strong> 0944640266
 </div>
 
-<div class="card">
-<img src="images/activity3.jpg" alt="Activity 3">
-<h2>กิจกรรมที่ 3</h2>
-<p>
-รายละเอียดการเข้าร่วมโครงงานวิชาการ การประกวด หรือสิ่งประดิษฐ์สร้างสรรค์ที่น่าภาคภูมิใจ
-</p>
+<div class="contact-item">
+💻 <strong>GitHub :</strong> github.com/14486-mint
+</div>
+
+<div class="contact-item">
+📷 <strong>Instagram :</strong> pthumwdii50
+</div>
+
+<div class="contact-item">
+📍 <strong>School :</strong> โรงเรียนพานทอง
 </div>
 
 </div>
 
-<!-- สคริปต์ปล่อยดาวและดอกไม้สีพาสเทลขยับได้ -->
-<script>
-function createStar() {
-    const container = document.getElementById('star-container');
-    if (container.children.length > 90) return;
+<div class="footer">
+© 2026 Portfolio | Designed by มินตรา
+</div>
 
-    const star = document.createElement('div');
-    
-    // ตั้งค่าดาว 5 แฉก ประกายวิบวับ ดอกไม้ ตามที่คุณกำหนด
-    const starTypes = ['⭐', '✨', '🌸'];
-    star.innerText = starTypes[Math.floor(Math.random() * starTypes.length)];
-    
-    // ชุดสีพาสเทลหวานๆ ละมุนตา
-    const colors = ['#ffb6c1', '#ffc0cb', '#ff85b3', '#ff69b4', '#ea9999', '#e0b0ff', '#b39ddb', '#ce93d8', '#fff0f5'];
-    
-    star.classList.add('moving-star');
-    star.style.left = Math.random() * 100 + 'vw';
-    star.style.fontSize = (Math.random() * 16 + 14) + 'px';
-    star.style.color = colors[Math.floor(Math.random() * colors.length)];
-    
-    const duration = Math.random() * 5 + 6;
-    star.style.animationDuration = duration + 's';
-    
-    container.appendChild(star);
-    
-    setTimeout(() => {
-        star.remove();
-    }, duration * 1000);
-}
-setInterval(createStar, 100); // ความถี่ดวงดาวพรั่งพรูอลังการ
-</script>
+--------------
 
-</body>
-</html>
+### 📝 รายการที่ปรับปรุงเพิ่มเติม:
+1. **จัดข้อความช่องทางติดต่อ:** เปลี่ยนเป็นแบบ **ชิดซ้าย (text-align: left)** เพื่อให้อ่านง่าย หัวข้ออีเมล/เบอร์โทรตรงกันเป็นแถวสวยงาม
+2. **เอฟเฟกต์Hover:** เพิ่มลูกเล่นเมื่อเอาเมาส์ไปชี้ที่ช่องทางติดต่อ บล็อกนั้นจะ **ขยับเลื่อนขวาเล็กน้อย (`translateX(5px)`)** และเปลี่ยนพื้นหลังเป็นสีขาวสว่างขึ้น
+3. **ปรับปรุงแถบเมนู (Navbar):** ปรับชื่อลิงก์จากภาษาไทยให้เป็นรูปแบบ `Home`, `About Me`, `Activities` แบบสากล และใส่เส้นใต้ไฮไลท์ที่หน้า `Contact` เรียบร้อยครับ
+
+ตอนนี้เราได้อัปเกรดหน้าหลัก, หน้า About, หน้า Achievements และหน้า Contact เรียบร้อยแล้ว เหลือหน้า **Activities (กิจกรรม)** ที่ยังไม่ได้ปรับแต่ง คุณต้องการส่งโค้ดหน้า **Activities** มาให้ผมช่วยโมดิฟายให้เข้าชุดกันด้วยเลยไหมครับ? สามารถส่งมาได้เลยนะ!
