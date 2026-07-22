@@ -21,7 +21,7 @@ body{
     padding-top: 100px; /* ป้องกันเมนูด้านบนบังเนื้อหา */
 }
 
-/* --- เอฟเฟกต์ดาว 5 แฉก ประกาย และดอกไม้สีพาสเทลขยับได้ --- */
+/* --- ส่วนควบคุมแอนิเมชัน ดาว 5 แฉก ประกาย และดอกไม้สีพาสเทลขยับกะพริบ --- */
 #star-container {
     position: fixed;
     top: 0;
@@ -48,7 +48,7 @@ body{
         opacity: 0.9;
     }
     50% {
-        opacity: 0.4;
+        opacity: 0.3; /* จังหวะหรี่แสงเพื่อความวิบวับกลางทาง */
         transform: translateY(50vh) translateX(30px) rotate(180deg) scale(1);
     }
     55% {
@@ -130,7 +130,7 @@ p{
     font-size:18px;
     color:#444;
     border: 1px solid #ffcfdf;
-    text-align: left; /* เปลี่ยนเป็นชิดซ้ายเพื่อความเรียบร้อยของข้อมูล */
+    text-align: left;
     padding-left: 30px;
     transition: 0.3s;
 }
@@ -155,7 +155,7 @@ p{
 
 <body>
 
-<!-- กล่องดวงดาวและดอกไม้ -->
+<!-- กล่องดวงดาวและดอกไม้พาสเทล -->
 <div id="star-container"></div>
 
 <nav>
@@ -201,5 +201,41 @@ p{
 © 2026 Portfolio | Designed by มินตรา
 </div>
 
---------------
+<!-- สคริปต์คำนวณและสุ่มปล่อยดาวห้าแฉก ประกาย และดอกไม้ขยับได้ -->
+<script>
+function createStar() {
+    const container = document.getElementById('star-container');
+    
+    // ตั้งค่าขีดจำกัดปริมาณเพื่อความลื่นไหลของหน้าเว็บ
+    if (container.children.length > 90) return;
 
+    const star = document.createElement('div');
+    
+    // ล็อกชนิดไอเทมให้แสดงเฉพาะ ⭐, ✨, 🌸
+    const starTypes = ['⭐', '✨', '🌸'];
+    star.innerText = starTypes[Math.floor(Math.random() * starTypes.length)];
+    
+    // จัดกลุ่มโค้ดสีพาสเทลหวานนุ่มนวล
+    const colors = ['#ffb6c1', '#ffc0cb', '#ff85b3', '#ff69b4', '#ea9999', '#e0b0ff', '#b39ddb', '#ce93d8', '#fff0f5'];
+    
+    star.classList.add('moving-star');
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.fontSize = (Math.random() * 16 + 14) + 'px';
+    star.style.color = colors[Math.floor(Math.random() * colors.length)];
+    
+    const duration = Math.random() * 5 + 6;
+    star.style.animationDuration = duration + 's';
+    
+    container.appendChild(star);
+    
+    setTimeout(() => {
+        star.remove();
+    }, duration * 1000);
+}
+
+// ตั้งค่าความหนาแน่นระเบิดดวงดาวพรั่งพรูต่อเนื่องทุก ๆ 100 มิลลิวินาที
+setInterval(createStar, 100);
+</script>
+
+</body>
+</html>
